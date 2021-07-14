@@ -14,7 +14,7 @@ POST="\[\e[m\]"
 DATETIME="${PINK}[${POST}${BLUE}\d${POST} ${RED}\A${POST}${PINK}]${POST}"
 if [[ "$USER" == "root" ]];
 then
-        USER="${RED}***${POST}${WHITEPINK}ROOT${POST}${RED}***${POST}"
+        USER="${RED}***${POST}${WHITEPINK}___ROOT___${POST}${RED}***${POST}"
 else
         USER="${CYAN}\u${POST}"
 fi
