@@ -8,12 +8,13 @@ RED="\[\e[31m\]"
 CYAN="\[\e[36m\]"
 GREEN="\[\e[32m\]"
 YELLOW="\[\e[33m\]"
+WHITEPINK="\[\033[47m\]\[\033[14;35m\]"
 POST="\[\e[m\]"
 
 DATETIME="${PINK}[${POST}${BLUE}\d${POST} ${RED}\A${POST}${PINK}]${POST}"
 if [[ "$USER" == "root" ]];
 then
-        USER="${RED}***${POST}${YELLOW}ROOT${POST}${RED}***${POST}"
+        USER="${RED}***${POST}${WHITEPINK}ROOT${POST}${RED}***${POST}"
 else
         USER="${CYAN}\u${POST}"
 fi
