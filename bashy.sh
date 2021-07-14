@@ -1,43 +1,48 @@
 #!/bin/bash
 
 eval "$(dircolors ~/purdyColors/dircolors)"
-SRV_TYPE=""
-PINK="\[\e[35m\]"
-BLUE="\[\e[34m\]"
-RED="\[\e[31m\]"
-CYAN="\[\e[36m\]"
-GREEN="\[\e[32m\]"
-YELLOW="\[\e[33m\]"
-WHITEPINK="\[\033[47m\]\[\033[14;35m\]"
-POST="\[\e[m\]"
+srvType=""
+color_pink="\[\e[35m\]"
+color_blue="\[\e[34m\]"
+color_red="\[\e[31m\]"
+color_cyan="\[\e[36m\]"
+color_green="\[\e[32m\]"
+color_yellow="\[\e[33m\]"
+color_whitepink="\[\033[47m\]\[\033[14;35m\]"
+color_post="\[\e[m\]"
 
-DATETIME="${PINK}[${POST}${BLUE}\d${POST} ${RED}\A${POST}${PINK}]${POST}"
+dateTime="${color_pink}[${color_post}${color_blue}\d${color_post} ${color_red}\A${color_post}${color_pink}]${color_post}"
+
 if [[ "$USER" == "root" ]];
 then
-        USER="${RED}***${POST}${WHITEPINK}___ROOT___${POST}${RED}***${POST}"
+        user="${color_red}***${color_post}${color_whitepink}___ROOT___${color_post}${color_red}***${color_post}"
 else
-        USER="${CYAN}\u${POST}"
+        user="${color_cyan}\u${color_post}"
 fi
-SRV_NAME_PATH="${PINK}@${POST}${GREEN}\h${POST}${PINK}:${POST}${YELLOW}\w${POST} \n${PINK}\$${POST} "
+
+srvNamePath="${color_pink}@${color_post}${color_green}\h${color_post}${color_pink}:${color_post}${color_yellow}\w${color_post} \n${color_pink}\$${color_post} "
+
 if [[ "$HOSTNAME" == *"-d-"* ]];
 then
-        SRV_TYPE="\[\e[32;40m\]dev\[\e[m\]"
+        srvType="\[\e[32;40m\]dev${color_post}"
 elif [[ "$HOSTNAME" == *"-r-"* ]];
 then
-        SRV_TYPE="\[\e[33m\]***DR*** \[\e[m\] "
+        srvType="\[\e[33m\]***DR***${color_post}"
 elif [[ "$HOSTNAME" == *"-c-"* ]];
 then
-        SRV_TYPE="\[\e[33m\]***BC***\[\e[m\] "
+        srvType="\[\e[33m\]***BC***${color_post}"
 elif [[ "$HOSTNAME" == *"-z-"* ]];
 then
-        SRV_TYPE="\[\e[35;44m\]proto\[\e[m\] "
+        srvType="\[\e[35;44m\]proto${color_post}"
 elif [[ "$HOSTNAME" == *"-u-"* ]];
 then
-        SRV_TYPE="\[\e[37;40m\]uat\[\e[m\] "
+        srvType="\[\e[37;40m\]uat${color_post}"
 elif [[ "$HOSTNAME" == *"-n-"* ]];
 then
-        SRV_TYPE="\[\e[32;40m\]nonprod\[\e[m\] "
+        srvType="\[\e[32;40m\]nonprod${color_post}"
 else
-        SRV_TYPE="\[\e[33m\]***PROD***\[\e[m\] "
+        srvType="\[\e[33m\]***PROD***${color_post}"
 fi
-export PS1="${SRV_TYPE} ${DATETIME} ${USER}${SRV_NAME_PATH}"
+
+
+export PS1="${srvType} ${dateTime} ${user}${srvNamePath}"
