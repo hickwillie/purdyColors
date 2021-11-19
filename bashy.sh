@@ -45,4 +45,4 @@ else
 fi
 
 
-export PS1="${srvType} ${dateTime} ${user}${srvNamePath}"
+export PS1="\n${srvType} ${dateTime} ${user}${srvNamePath}"
