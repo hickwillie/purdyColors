@@ -11,7 +11,7 @@ color_yellow="\[\e[33m\]"
 color_whitepink="\[\033[47m\]\[\033[14;35m\]"
 color_post="\[\e[m\]"
 
-dateTime="${color_pink}[${color_post}${color_blue}\d${color_post} ${color_red}\A${color_post}${color_pink}]${color_post}"
+dateTime="${color_pink}[${color_post}${color_red}\d${color_post} ${color_red}\A${color_post}${color_pink}]${color_post}"
 
 if [[ "$USER" == "root" ]];
 then
