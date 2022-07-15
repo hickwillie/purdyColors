@@ -1,6 +1,15 @@
 #!/bin/bash
+if [ -d "~/purdyColors/" ];
+then
+	eval "$(dircolors ~/purdyColors/dircolors)"
+elif [ -d "/usr/local/purdyColors/" ];
+then
+	eval "$(dircolors /usr/local/purdyColors/dircolors)"
+else
+	echo "Where Am I????"
+	exit;
+fi
 
-eval "$(dircolors ~/purdyColors/dircolors)"
 srvType=""
 color_pink="\[\e[35m\]"
 color_blue="\[\e[34m\]"
