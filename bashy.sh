@@ -4,7 +4,7 @@ then
 	eval "$(dircolors ~/purdyColors/dircolors)"
 elif [ -d "/usr/local/purdyColors/" ];
 then
-	eval "$(dircolors /usr/local/purdyColors/dircolors)"
+	eval "$(dircolors /usr/local/lib/purdyColors/dircolors)"
 else
 	echo "Where Am I????"
 	exit;
