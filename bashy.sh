@@ -2,7 +2,7 @@
 if [ -d "~/purdyColors/" ];
 then
 	eval "$(dircolors ~/purdyColors/dircolors)"
-elif [ -d "/usr/local/purdyColors/" ];
+elif [ -d "/usr/local/lib/purdyColors/" ];
 then
 	eval "$(dircolors /usr/local/lib/purdyColors/dircolors)"
 else
